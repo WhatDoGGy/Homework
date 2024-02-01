@@ -1,0 +1,22 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "First Homework",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "parcel task_1.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhatDoGGy/Homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhatDoGGy/Homework/issues"
+  },
+  "homepage": "https://github.com/WhatDoGGy/Homework#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
