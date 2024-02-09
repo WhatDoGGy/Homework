@@ -1,10 +1,10 @@
 {
   "name": "homework",
   "version": "1.0.0",
-  "description": "First Homework",
-  "main": "index.js",
+  "description": "Second Homework",
+  "main": "task_1.js",
   "scripts": {
-    "start:dev": "parcel task_1.html"
+    "start:dev": "parcel task_2.html"
   },
   "repository": {
     "type": "git",

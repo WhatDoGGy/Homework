@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fullscreen API Example</title>
+  <link href="/task_2.2cdaf7bc.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="fullscreenContainer">
+    <p>Це контейнер, який можна розгорнути в повноекранний режим.</p>
+  </div>
+
+  <button id="toggleFullscreen">Toggle Fullscreen</button>
+  <br>
+  <br>
+  <a href="/task_2.html"><button class="button1">2nd Task</button></a>
+
+  <script>document.addEventListener("DOMContentLoaded", function() {
+    const fullscreenContainer = document.getElementById("fullscreenContainer");
+    const toggleFullscreenBtn = document.getElementById("toggleFullscreen");
+    function toggleFullscreen() {
+        if (document.fullscreenElement) document.exitFullscreen();
+        else fullscreenContainer.requestFullscreen().catch((error)=>{
+            console.error(`\u{41F}\u{43E}\u{43C}\u{438}\u{43B}\u{43A}\u{430} \u{43F}\u{440}\u{438} \u{432}\u{445}\u{43E}\u{434}\u{456} \u{432} \u{43F}\u{43E}\u{432}\u{43D}\u{43E}\u{435}\u{43A}\u{440}\u{430}\u{43D}\u{43D}\u{438}\u{439} \u{440}\u{435}\u{436}\u{438}\u{43C}: ${error.message}`);
+        });
+    }
+    toggleFullscreenBtn.addEventListener("click", toggleFullscreen);
+    document.addEventListener("fullscreenchange", function() {
+        if (document.fullscreenElement) {
+            fullscreenContainer.style.background = "black";
+            fullscreenContainer.style.color = "white";
+        } else {
+            fullscreenContainer.style.background = "";
+            fullscreenContainer.style.color = "";
+        }
+    });
+});
+
+</script>
+
+<script src="/task_3.72a6e840.js"></script></body>
+</html>

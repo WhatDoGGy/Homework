@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;;AAIA","sources":["src/style.css"],"sourcesContent":[".button1 {\r\n    width: 100px;\r\n    height: 70px;\r\n}\r\n#fullscreenContainer {\r\n    width: 300px;\r\n    height: 200px;\r\n    border: 2px solid black;\r\n    transition: all 0.3s ease;\r\n  }"],"names":[],"version":3,"file":"task_2.2cdaf7bc.css.map","sourceRoot":"/__parcel_source_root/"}
