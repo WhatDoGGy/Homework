@@ -4,7 +4,7 @@
   "description": "Second Homework",
   "main": "task_1.js",
   "scripts": {
-    "start:dev": "parcel task_2.html"
+    "start:dev": "parcel src/HW2/task_2.html"
   },
   "repository": {
     "type": "git",
