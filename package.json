@@ -18,5 +18,8 @@
   "homepage": "https://github.com/WhatDoGGy/Homework#readme",
   "devDependencies": {
     "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "rimraf": "^5.0.5"
   }
 }
