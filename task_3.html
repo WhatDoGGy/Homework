@@ -1,202 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skibin E-Shop</title>
-    <link rel="icon" href="./src/img/logo.jpg">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav {
-            margin-top: 20px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #fff;
-        }
-
-        nav ul li {
-            margin: 0;
-            padding: 10px;
-        }
-
-        main {
-            padding: 20px;
-            flex-wrap: wrap;
-            
-
-        }
-
-        nav, main, footer {
-            margin: 20px;
-        }
-
-        main {
-            width: 66.66%;
-            justify-content: center;
-            position: relative;
-            left: 150px;
-        }
-
-        aside {
-            height: 100%; /* Full-height: remove this if you want "auto" height */
-            width: 160px; /* Set the width of the sidebar */
-            position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-            z-index: 1; /* Stay on top */
-            top: 0; /* Stay at the top */
-            left: 0;
-            background-color: #4e4e4e; /* Black */
-            overflow-x: hidden; /* Disable horizontal scroll */
-            padding-top: 20px;
-        }
-
-        h1 {
-            color: #fff;
-        }
-
-        h2 { 
-        text-align: center;
-        width: 100px;
-
-        }
-        section {
-            flex-basis: 100%;
-        }
-        figure {
-            margin: 20;
-            justify-content: center;
-            
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        figcaption {
-            width: 150px;
-            justify-content: center;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-            flex-basis: 100%;
-        }
-        .logo {
-            width: 250;
-            height: 250;
-        }
-    </style>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fullscreen API Example</title>
+  <link href="./src/style.css" rel="stylesheet" />
 </head>
-
 <body>
 
-    <header role="banner">
-        <h1>Skibin E-Shop</h1>
-        <nav>
-            <ul>
-                <li><a href="/task_1.html">Blog</a></li>
-                <li><a href="/task_2.html">Portfolio</a></li>
-                <li><a href="/task_3.html">E-Shop</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div id="fullscreenContainer">
+    <p>Це контейнер, який можна розгорнути в повноекранний режим.</p>
+  </div>
 
-    <main role="main">
+  <button id="toggleFullscreen">Toggle Fullscreen</button>
+  <br>
+  <br>
+  <a href="/task_2.html"><button class="button1">2nd Task</button></a>
 
-        <section>
-            <nav role="navigation" tabindex="0" aria-label="breadcrumb">
-                <ol>
-                    <li role="menuitem"><a href="#canoe">canoe</a></li>
-                    <li role="menuitem"><a href="#yacht">yacht</a></li>
-                    <li role="menuitem"><a href="#ferry">ferry</a></li>
-                    <li role="menuitem"><a href="#footer">Contact us</a></li>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fullscreenContainer = document.getElementById("fullscreenContainer");
+      const toggleFullscreenBtn = document.getElementById("toggleFullscreen");
 
-                </ol>
-            </nav>
-            <h1>Поточна категорія</h1>
-            <article>
-                <h2 id="canoe">Canoe</h2>
-                <figure>
-                    <img src="./src/img/boats/canoe.jpg" alt="Goods 1" height="500px" width="500px">
-                    <figcaption>Ціна: $20.00</figcaption>
-                    <figcaption>weight: 200</figcaption>
-                </figure>
-            </article>
-            <article>
-                <h2 id="yacht">Yacht</h2>
-                <figure>
-                    <img src="./src/img/boats/yacht.jpg" alt="Goods 2" height="500px" width="500px">
-                    <figcaption>Ціна: $20.00</figcaption>
-                    <figcaption>weight: 1500</figcaption>
-                </figure>
-            </article>
-            <article>
-                <h2 id="ferry">Ferry</h2>
-                <figure>
-                    <img src="./src/img/boats/ferry.jpg" alt="Goods 3" height="500px" width="500px">
-                    <figcaption>Price: $20.00</figcaption>
-                    <figcaption>weight: 500</figcaption>
-                </figure>
-            </article>
-        </section>
-    </main>
-    <aside>
-        
-            
-            <figure role="banner" tabindex="0">
-                <h2>Boat 1</h2>
-                <img src="./src/img/boats/canoe.jpg" alt="Goods 3" height="150px" width="150px">
-                <figcaption><a href="#">Store Link</a></figcaption>
-            </figure>
+      function toggleFullscreen() {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          fullscreenContainer.requestFullscreen().catch(error => {
+            console.error(`Помилка при вході в повноекранний режим: ${error.message}`);
+          });
+        }
+      }
 
-            
-            <figure role="banner" tabindex="0">
-                <h2>Boat 2</h2>
-                <img src="./src/img/boats/yacht.jpg" alt="Goods 3" height="150px" width="150px">
-                <figcaption><a href="#">Store Link</a></figcaption>
-            </figure>
+      toggleFullscreenBtn.addEventListener("click", toggleFullscreen);
 
-            
-            <figure role="banner" tabindex="0">
-                <h2>Boat 3</h2>
-                <img src="./src/img/boats/ferry.jpg" alt="Goods 3" height="150x" width="150px">
-                <figcaption><a href="#">Store Link</a></figcaption>
-            </figure>
-    </aside>
-
-    <footer role="contentinfo">
-        <p>&copy; 2024 Skibin E-Shop. All rights reserved.</p>
-        <nav role="navigation" aria-label="My other tasks">
-            <ul role="menubar" tabindex="0">
-                <li role="menuitem"><a href="/task_1.html" aria-label="Blog" tabindex="0">Blog</a></li>
-                <li role="menuitem"><a href="/task_2.html" aria-label="Portfolio" tabindex="0">Portfolio</a></li>
-                <li role="menuitem"><a href="/task_3.html" aria-label="E-Shop" tabindex="0">E-Shop</a></li>
-            </ul>
-        </nav>
-    </footer>
+      document.addEventListener("fullscreenchange", function () {
+        if (document.fullscreenElement) {
+          fullscreenContainer.style.background = 'black';
+          fullscreenContainer.style.color = 'white';
+        } else {
+          fullscreenContainer.style.background = '';
+          fullscreenContainer.style.color = '';
+        }
+      });
+    });
+  </script>
 
 </body>
-
 </html>
