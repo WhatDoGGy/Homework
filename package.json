@@ -4,7 +4,7 @@
   "description": "First Homework",
   "main": "index.js",
   "scripts": {
-    "start:dev": "parcel task_1.html"
+    "start:dev": "parcel src/HW1/task_1.html"
   },
   "repository": {
     "type": "git",
